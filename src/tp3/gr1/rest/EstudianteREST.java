@@ -23,7 +23,7 @@ public class EstudianteREST {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Estudiante> getEstudiantes(){
 		List<Estudiante> estudiantes = new EstudianteDAO().getEstudiantesSortDNI();
-		System.out.println("ENTRO AL METODO");
+		System.out.println(estudiantes);
 		return estudiantes;
 //		return IntStream.
 //				range(0, 20).
