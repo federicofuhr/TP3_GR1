@@ -29,13 +29,20 @@ public class Matricula implements Serializable {
 	@Column(nullable = true)
 	private Date fecha_graduacion;
 
-	@Column(nullable = false, name = "finalizo")
+	@Column(nullable = true, name = "finalizo")
 	private boolean finalizo;
 
 	public Matricula() {
 		super();
 	}
 
+	public Matricula(Estudiante estudiante, Carrera carrera, Date fecha_inscripcion) {
+		super();
+		this.estudiante = estudiante;
+		this.carrera = carrera;
+		this.fecha_inscripcion = fecha_inscripcion;
+	}
+	
 	public Matricula(Estudiante estudiante, Carrera carrera, Date fecha_inscripcion, Date fecha_graduacion,
 			boolean finalizo) {
 		super();

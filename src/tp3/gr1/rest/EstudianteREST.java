@@ -34,7 +34,6 @@ public class EstudianteREST {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Estudiante getEstudianteLegajo(@PathParam("id") int id) {
 		return LectorCicloVida.estudiante.getEstudianteLegajo(id);
-		//return new Estudiante(estudiante);
 	}
 
 	/*
@@ -46,13 +45,6 @@ public class EstudianteREST {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Estudiante> getListaEstudiantes() {
 		return LectorCicloVida.estudiante.getEstudiantesSortDNI();
-
-//		List<Estudiante> result = new ArrayList<Estudiante>();
-//
-//		for (Estudiante estudiante : estudianteListResponse) {
-//			result.add(new Estudiante(estudiante));
-//		}
-//		return result;
 	}
 
 	/*
@@ -64,12 +56,18 @@ public class EstudianteREST {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Estudiante> getEstudianteGenero(@PathParam("genero") String genero) {
 		return LectorCicloVida.estudiante.getEstudianteGenero(genero);
-
-//		List<Estudiante> result = new ArrayList<Estudiante>();
-//
-//		for (Estudiante estudiante : estudianteListResponse) {
-//			result.add(new Estudiante(estudiante));
-//		}
-//		return result;
 	}
+	
+	/*
+	 * Resolucion ejercicio 2.G
+	 */
+	
+	@GET
+	@Path("/listaEstudiantesCarrerasResidencia/{carrera}/{residencia}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Estudiante> getEstudianteGenero(@PathParam("carrera") String carrera, @PathParam("residencia") String residencia) {
+		return LectorCicloVida.estudiante.getEstudiantesCarreraResidencia(carrera, residencia);
+	}
+	
+	
 }

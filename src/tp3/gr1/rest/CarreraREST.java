@@ -18,4 +18,17 @@ public class CarreraREST {
 	  public List<Carrera> getListaCarreras() {
 	      return LectorCicloVida.carrera.getCarreras();
 	  }
+	
+	
+	/*
+	 * Resolucion ejercicio 2.F
+	 */
+	
+	@GET
+	@Path("/listaCarrerasInscriptos")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Carrera> getListaCarrerasInscriptos() {
+		return LectorCicloVida.carrera.getCarrerasPorInscriptos();
+	}
+	
 }
