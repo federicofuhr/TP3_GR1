@@ -78,7 +78,7 @@ public class Estudiante {
 		this.edad = estudiante.edad;
 		this.genero = estudiante.genero;
 		this.dni = estudiante.dni;
-		this.ciudad_residencia = ciudad_residencia;
+		this.ciudad_residencia = estudiante.ciudad_residencia;
 	}
 
 	public int getLegajo() {
