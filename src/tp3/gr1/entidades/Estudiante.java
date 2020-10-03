@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 public class Estudiante {
@@ -35,6 +37,7 @@ public class Estudiante {
 	@Column (nullable=false)
 	private String ciudad_residencia;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "estudiante")
 	private List<Matricula> carreras;
 

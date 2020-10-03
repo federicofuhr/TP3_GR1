@@ -33,8 +33,8 @@ public class EstudianteREST {
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Estudiante getEstudianteLegajo(@PathParam("id") int id) {
-		Estudiante estudiante = LectorCicloVida.estudiante.getEstudianteLegajo(id);
-		return new Estudiante(estudiante);
+		return LectorCicloVida.estudiante.getEstudianteLegajo(id);
+		//return new Estudiante(estudiante);
 	}
 
 	/*
@@ -45,14 +45,14 @@ public class EstudianteREST {
 	@Path("/listaEstudiantes")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Estudiante> getListaEstudiantes() {
-		List<Estudiante> estudianteListResponse = LectorCicloVida.estudiante.getEstudiantesSortDNI();
+		return LectorCicloVida.estudiante.getEstudiantesSortDNI();
 
-		List<Estudiante> result = new ArrayList<Estudiante>();
-
-		for (Estudiante estudiante : estudianteListResponse) {
-			result.add(new Estudiante(estudiante));
-		}
-		return result;
+//		List<Estudiante> result = new ArrayList<Estudiante>();
+//
+//		for (Estudiante estudiante : estudianteListResponse) {
+//			result.add(new Estudiante(estudiante));
+//		}
+//		return result;
 	}
 
 	/*
@@ -63,13 +63,13 @@ public class EstudianteREST {
 	@Path("/genero/{genero}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Estudiante> getEstudianteGenero(@PathParam("genero") String genero) {
-		List<Estudiante> estudianteListResponse = LectorCicloVida.estudiante.getEstudianteGenero(genero);
+		return LectorCicloVida.estudiante.getEstudianteGenero(genero);
 
-		List<Estudiante> result = new ArrayList<Estudiante>();
-
-		for (Estudiante estudiante : estudianteListResponse) {
-			result.add(new Estudiante(estudiante));
-		}
-		return result;
+//		List<Estudiante> result = new ArrayList<Estudiante>();
+//
+//		for (Estudiante estudiante : estudianteListResponse) {
+//			result.add(new Estudiante(estudiante));
+//		}
+//		return result;
 	}
 }
