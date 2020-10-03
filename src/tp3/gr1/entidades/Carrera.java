@@ -37,6 +37,12 @@ public class Carrera {
 		super();
 	}
 
+	public Carrera(Carrera carrera) {
+		// TODO Auto-generated constructor stub
+		this.id_carrera = carrera.id_carrera;
+		this.nombre_carrera = carrera.nombre_carrera;
+	}
+
 	public int getId_Carrera() {
 		return id_carrera;
 	}
