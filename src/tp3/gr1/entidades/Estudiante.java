@@ -70,6 +70,17 @@ public class Estudiante {
 		this.ciudad_residencia = ciudad_residencia;
 	}
 	
+	public Estudiante(Estudiante estudiante) {
+		// TODO Auto-generated constructor stub
+		this.legajo = estudiante.legajo;
+		this.nombre = estudiante.nombre;
+		this.apellido = estudiante.apellido;
+		this.edad = estudiante.edad;
+		this.genero = estudiante.genero;
+		this.dni = estudiante.dni;
+		this.ciudad_residencia = ciudad_residencia;
+	}
+
 	public int getLegajo() {
 		return legajo;
 	}

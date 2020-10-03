@@ -54,6 +54,17 @@ public class MatriculaDAO implements Serializable {
 		}
 	}
 	
+	public List<Matricula> getMatriculaIdEstudiante(int id) {
+		EntityManager em = emf.createEntityManager();
+		Query query = em
+				.createNativeQuery(
+						"SELECT M.id_carrera FROM Matricula M WHERE M.id_estudiante =:id_estu",
+						Matricula.class)
+				.setParameter("id_estu", id);
+		List<Matricula> listado = query.getResultList();
+		return listado;
+	}
+	
 	public void agregarMatriculas(CSVParser c) {
 		// TODO Auto-generated method stub
 		for(CSVRecord row: c) {
