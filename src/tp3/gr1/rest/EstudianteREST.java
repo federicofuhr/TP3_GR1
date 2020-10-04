@@ -1,14 +1,10 @@
 package tp3.gr1.rest;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
-import tp3.gr1.controller.EstudianteDAO;
-import tp3.gr1.entidades.Carrera;
 import tp3.gr1.entidades.Estudiante;
 
 @Path("/estudiantes")
