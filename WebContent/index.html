@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form name="form-nuevo-estudiante" action="/TP3_GR1/rest/estudiantes/nuevoEstudiante" method="post">
+	<form action="/TP3_GR1/rest/estudiantes/nuevoEstudiante" method="post">
 		<h2>Agregar nuevo estudiante</h2>
 		<input type="text" name="nombre" placeholder="Nombre">
 		<input type="text" name="apellido" id="" placeholder="Apellido">
@@ -19,8 +19,20 @@
 		<select name="genero" id="">
 			<option value="Masculino">Masculino</option>
 			<option value="Femenino">Femenino</option>
-		</select> 
+		</select>
 		<input type="submit" id="submit-nuevo-estudiante" value="submit">
+	</form>
+
+	<form action="/TP3_GR1/rest/matriculas/nuevaMatricula" method="POST">
+		<h2>Matricular estudiante a Carrera</h2>
+		<input type="number" name="id_estudiante" placeholder="ID del estudiante">
+		<input type="number" name="id_carrera" placeholder="ID de la carrera">
+		<label for="inscripcion">Fecha inscripcion:</label>
+		<input type="date" id="inscripcion" name="fecha_inscripcion" value="2018-07-22" min="2018-01-01" max="2030-12-31">
+		<label for="graduacion">Fecha graduacion:</label>
+		<input type="date" id="start" name="fecha_graduacion" value="2018-07-22" min="2018-01-01" max="2030-12-31">
+		<label><input type="checkbox" id="cbox1" name="esta_graduado" value="graduado"> Se graduo?</label>
+		<input type="submit" value="submit">
 	</form>
 
 	<form action="/TP3_GR1/rest/estudiantes/genero/" method="POST">
