@@ -10,7 +10,7 @@
 
 <body>
 	<form action="/TP3_GR1/rest/estudiantes/nuevoEstudiante" method="post">
-		<h2>Agregar nuevo estudiante</h2>
+		<h2>A) Agregar nuevo estudiante</h2>
 		<input type="text" name="nombre" placeholder="Nombre">
 		<input type="text" name="apellido" id="" placeholder="Apellido">
 		<input type="text" name="ciudad_residencia" id="" placeholder="Ciudad">
@@ -24,7 +24,7 @@
 	</form>
 
 	<form action="/TP3_GR1/rest/matriculas/nuevaMatricula" method="POST">
-		<h2>Matricular estudiante a Carrera</h2>
+		<h2>B) Matricular estudiante a Carrera</h2>
 		<input type="number" name="id_estudiante" placeholder="ID del estudiante">
 		<input type="number" name="id_carrera" placeholder="ID de la carrera">
 		<label for="inscripcion">Fecha inscripcion:</label>
@@ -34,9 +34,15 @@
 		<label><input type="checkbox" id="cbox1" name="esta_graduado" value="graduado"> Se graduo?</label>
 		<input type="submit" value="submit">
 	</form>
+	
+	<form action="/TP3_GR1/rest/estudiantes/obtenerEstudiante" method="GET">
+		<h2>D) Obtener un estudiante por número de libreta universitaria.</h2>
+		<input type="number" name="id" min="0" step="1" placeholder="Legajo">
+		<input type="submit" value="submit">
+	</form>
 
 	<form action="/TP3_GR1/rest/estudiantes/genero/" method="POST">
-		<h2>Obtener lista de estudiantes por genero</h2>
+		<h2>E) Obtener lista de estudiantes por genero</h2>
 		<select name="genero" id="">
 			<option value="Masculino">Masculino</option>
 			<option value="Femenino">Femenino</option>
@@ -44,18 +50,13 @@
 	</form>
 
 	<form action="/TP3_GR1/rest/estudiantes/listaEstudiantesCarrerasResidencia/" method="POST">
-		<h2>Obtener un estudiante por carrera y ciudad de residencia</h2>
+		<h2>G) Obtener un estudiante por carrera y ciudad de residencia</h2>
 		<input type="text" name="carrera" id="" placeholder="Carrera">
 		<input type="text" name="ciudad_residencia" id="" placeholder="Ciudad de residencia"> <input type="submit"
 			value="submit">
 	</form>
 
-	<form action="/TP3_GR1/rest/estudiantes/obtenerEstudiante" method="GET">
-		<h2>Obtener un estudiante por número de libreta universitaria.</h2>
-		<input type="number" name="id" min="0" step="1" placeholder="Legajo">
-
-		<input type="submit" value="submit">
-	</form>
+	
 </body>
 
 </html>
