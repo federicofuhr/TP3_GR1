@@ -14,7 +14,7 @@
 				<!--  Propiedades de configuracion de JDBC para MySQL	-->		
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 			<!-- Cambiar el time zone -->
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/example" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/example?serverTimezone=UTC" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			
 			<!-- Propiedad para la generacion automatica del esquema de base de datos -->
