@@ -16,6 +16,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
 import tp3.gr1.entidades.Carrera;
+import tp3.gr1.entidades.Estudiante;
 import tp3.gr1.entidades.Matricula;
 import tp3.gr1.entidades.ReporteGraduadosCarrerasPorAnio;
 import tp3.gr1.entidades.ReporteInscriptosCarrerasPorAnio;
@@ -43,6 +44,12 @@ public class CarreraDAO implements Serializable {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+	}
+	
+	public int getUltimoId() {
+		EntityManager em = emf.createEntityManager();
+		List<Carrera> listado = em.createQuery("SELECT C FROM Carrera C order by C.id_carrera desc ", Carrera.class).getResultList();
+		return listado.get(0).getId_Carrera();
 	}
 
 	public List<Carrera> getCarreras() {

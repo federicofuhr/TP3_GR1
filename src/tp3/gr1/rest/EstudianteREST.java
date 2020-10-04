@@ -7,7 +7,7 @@ import javax.ws.rs.core.MediaType;
 
 import tp3.gr1.entidades.Estudiante;
 
-@Path("/estudiantes")
+@Path("/estudiantes/")
 public class EstudianteREST {
 	
 	/*
@@ -15,9 +15,12 @@ public class EstudianteREST {
 	 */
 	
 	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/nuevoEstudiante")
+	//@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public void addEstudiante(Estudiante e) {
+	public void addEstudiante(@FormParam("nombre") String nombre, @FormParam("apellido") String apellido, @FormParam("ciudad_residencia") String ciudad, @FormParam("dni") int dni, @FormParam("edad") int edad, @FormParam("genero") String genero) {
+		int legajo = LectorCicloVida.estudiante.getUltimoId() + 1;
+		Estudiante e = new Estudiante(legajo, nombre, apellido, edad, genero, dni, ciudad);
 		LectorCicloVida.estudiante.insert(e);
 	}
 
@@ -26,9 +29,9 @@ public class EstudianteREST {
 	 */
 
 	@GET
-	@Path("/{id}")
+	@Path("/obtenerEstudiante")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Estudiante getEstudianteLegajo(@PathParam("id") int id) {
+	public Estudiante getEstudianteLegajo(@QueryParam("id") int id) {
 		return LectorCicloVida.estudiante.getEstudianteLegajo(id);
 	}
 

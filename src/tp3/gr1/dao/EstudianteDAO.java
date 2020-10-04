@@ -35,6 +35,12 @@ public class EstudianteDAO  implements Serializable{
 			return listado.get(0);
 		}
 	}
+	
+	public int getUltimoId() {
+		EntityManager em = emf.createEntityManager();
+		List<Estudiante> listado = em.createQuery("SELECT E FROM Estudiante E order by E.legajo desc ", Estudiante.class).getResultList();
+		return listado.get(0).getLegajo();
+	}
 
 	public void insert(Estudiante estudiante) {
 		EntityManager em = null;
