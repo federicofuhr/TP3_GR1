@@ -1,14 +1,49 @@
-<html>
-<form action="/estudiante" method="post">
-        <input type="text" name="nombre" id="" placeholder="Nombre">
-        <input type="text" name="apellido" id="" placeholder="Apellido">
-        <input type="text" name="ciudad_residencia" id="" placeholder="Ciudad">
-        <input type="number" name="dni" id=""  placeholder="DNI">
-        <input type="number" name="edad" id=""  placeholder="Edad">
-        <select name="genero" id="">
-            <option value="m">Masculino</option>
-            <option value="f">Femenino</option>
-        </select>
-        <input type="submit" value="submit">
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Entregable Nº3</title>
+	<script type="text/javascript" src="./js/main.js"></script>
+</head>
+
+<body>
+	<form name="form-nuevo-estudiante" action="/TP3_GR1/rest/estudiantes/nuevoEstudiante" method="post">
+		<h2>Agregar nuevo estudiante</h2>
+		<input type="text" name="nombre" placeholder="Nombre">
+		<input type="text" name="apellido" id="" placeholder="Apellido">
+		<input type="text" name="ciudad_residencia" id="" placeholder="Ciudad">
+		<input type="number" name="dni" id="" placeholder="DNI">
+		<input type="number" name="edad" id="" placeholder="Edad">
+		<select name="genero" id="">
+			<option value="Masculino">Masculino</option>
+			<option value="Femenino">Femenino</option>
+		</select> 
+		<input type="submit" id="submit-nuevo-estudiante" value="submit">
+	</form>
+
+	<form action="/TP3_GR1/rest/estudiantes/genero/" method="POST">
+		<h2>Obtener lista de estudiantes por genero</h2>
+		<select name="genero" id="">
+			<option value="Masculino">Masculino</option>
+			<option value="Femenino">Femenino</option>
+		</select> <input type="submit" value="submit">
+	</form>
+
+	<form action="/TP3_GR1/rest/estudiantes/listaEstudiantesCarrerasResidencia/" method="POST">
+		<h2>Obtener un estudiante por carrera y ciudad de residencia</h2>
+		<input type="text" name="carrera" id="" placeholder="Carrera">
+		<input type="text" name="ciudad_residencia" id="" placeholder="Ciudad de residencia"> <input type="submit"
+			value="submit">
+	</form>
+
+	<form action="/TP3_GR1/rest/estudiantes/obtenerEstudiante" method="GET">
+		<h2>Obtener un estudiante por número de libreta universitaria.</h2>
+		<input type="number" name="id" min="0" step="1" placeholder="Legajo">
+
+		<input type="submit" value="submit">
+	</form>
+</body>
+
 </html>

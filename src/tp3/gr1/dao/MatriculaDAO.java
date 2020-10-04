@@ -1,4 +1,4 @@
-package tp3.gr1.controller;
+package tp3.gr1.dao;
 
 import java.io.Serializable;
 import java.util.List;

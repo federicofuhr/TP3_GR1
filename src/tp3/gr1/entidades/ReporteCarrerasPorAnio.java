@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import tp3.gr1.controller.CarreraDAO;
+import tp3.gr1.dao.CarreraDAO;
 
 public class ReporteCarrerasPorAnio {
 	

@@ -6,9 +6,9 @@ import java.io.IOException;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 
-import tp3.gr1.controller.CarreraDAO;
-import tp3.gr1.controller.EstudianteDAO;
-import tp3.gr1.controller.MatriculaDAO;
+import tp3.gr1.dao.CarreraDAO;
+import tp3.gr1.dao.EstudianteDAO;
+import tp3.gr1.dao.MatriculaDAO;
 
 public class Insert {
 

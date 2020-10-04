@@ -1,4 +1,4 @@
-package tp3.gr1.controller;
+package tp3.gr1.dao;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -58,7 +58,11 @@ public class CarreraDAO implements Serializable {
 		List<Carrera> listado = em
 				.createQuery("SELECT C FROM Carrera C WHERE C.id_carrera =:id_carrera ", Carrera.class)
 				.setParameter("id_carrera", id_carrera).getResultList();
-		return listado.get(0);
+		if (listado.size() == 0) {// no existe el estudiante
+			return null;
+		} else {
+			return listado.get(0);
+		}
 	}
 	
 
@@ -95,7 +99,10 @@ public class CarreraDAO implements Serializable {
 
 	public void agregarCarreras(CSVParser c) {
 		for(CSVRecord row: c) {
-			this.insert(new Carrera(Integer.parseInt(row.get("id_carrera")), row.get("nombre_carrera")));
+			int id_carrera = Integer.parseInt(row.get("id_carrera"));
+			String nombre_carrera = row.get("nombre_carrera");
+			
+			this.insert(new Carrera(id_carrera, nombre_carrera));
 		}
 	}
 

@@ -6,9 +6,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import tp3.gr1.controller.CarreraDAO;
-import tp3.gr1.controller.EstudianteDAO;
-import tp3.gr1.controller.MatriculaDAO;
+import tp3.gr1.dao.CarreraDAO;
+import tp3.gr1.dao.EstudianteDAO;
+import tp3.gr1.dao.MatriculaDAO;
 import tp3.gr1.entidades.ReporteCarrerasPorAnio;
 import tp3.gr1.entidades.ReporteGraduadosCarrerasPorAnio;
 import tp3.gr1.entidades.ReporteInscriptosCarrerasPorAnio;

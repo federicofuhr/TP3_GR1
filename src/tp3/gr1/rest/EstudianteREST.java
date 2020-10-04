@@ -47,10 +47,10 @@ public class EstudianteREST {
 	 * Resolucion ejercicio 2.E
 	 */
 
-	@GET
-	@Path("/genero/{genero}")
+	@POST
+	@Path("/genero/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Estudiante> getEstudianteGenero(@PathParam("genero") String genero) {
+	public List<Estudiante> getEstudianteGenero(@FormParam("genero") String genero) {
 		return LectorCicloVida.estudiante.getEstudianteGenero(genero);
 	}
 	
@@ -58,10 +58,10 @@ public class EstudianteREST {
 	 * Resolucion ejercicio 2.G
 	 */
 	
-	@GET
-	@Path("/listaEstudiantesCarrerasResidencia/{carrera}/{residencia}")
+	@POST
+	@Path("/listaEstudiantesCarrerasResidencia/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Estudiante> getEstudianteGenero(@PathParam("carrera") String carrera, @PathParam("residencia") String residencia) {
+	public List<Estudiante> getEstudianteGenero(@FormParam("carrera") String carrera, @FormParam("ciudad_residencia") String residencia) {
 		return LectorCicloVida.estudiante.getEstudiantesCarreraResidencia(carrera, residencia);
 	}
 	
