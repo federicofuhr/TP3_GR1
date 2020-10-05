@@ -1,5 +1,6 @@
 package tp3.gr1.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.Produces;
@@ -31,8 +32,10 @@ public class EstudianteREST {
 	@GET
 	@Path("/obtenerEstudiante")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Estudiante getEstudianteLegajo(@QueryParam("id") int id) {
-		return LectorCicloVida.estudiante.getEstudianteLegajo(id);
+	public List<Estudiante> getEstudianteLegajo(@QueryParam("id") int id) {
+		List<Estudiante> l = new ArrayList<Estudiante>();
+		l.add(LectorCicloVida.estudiante.getEstudianteLegajo(id));
+		return l;
 	}
 
 	/*
@@ -50,10 +53,10 @@ public class EstudianteREST {
 	 * Resolucion ejercicio 2.E
 	 */
 
-	@POST
-	@Path("/genero/")
+	@GET
+	@Path("/genero")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Estudiante> getEstudianteGenero(@FormParam("genero") String genero) {
+	public List<Estudiante> getEstudianteGenero(@QueryParam("genero") String genero) {
 		return LectorCicloVida.estudiante.getEstudianteGenero(genero);
 	}
 	
@@ -61,10 +64,10 @@ public class EstudianteREST {
 	 * Resolucion ejercicio 2.G
 	 */
 	
-	@POST
-	@Path("/listaEstudiantesCarrerasResidencia/")
+	@GET
+	@Path("/listaEstudiantesCarrerasResidencia")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Estudiante> getEstudianteGenero(@FormParam("carrera") String carrera, @FormParam("ciudad_residencia") String residencia) {
+	public List<Estudiante> getEstudianteGenero(@QueryParam("carrera") String carrera, @QueryParam("ciudad") String residencia) {
 		return LectorCicloVida.estudiante.getEstudiantesCarreraResidencia(carrera, residencia);
 	}
 	

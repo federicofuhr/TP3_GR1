@@ -80,31 +80,32 @@
 		<form action="/TP3_GR1/rest/estudiantes/genero/" method="POST">
             <h2>Estudiantes por genero</h2>
             <div class="form-group">
-			<select class="form-control" name="genero" id="">
+			<select class="form-control" name="genero" id="genero">
 				<option value="Masculino">Masculino</option>
 				<option value="Femenino">Femenino</option>
             </select> 
         </div>
-        <button class="btn btn-primary" type="submit" value="submit"> Buscar</button>
+        <button class="btn btn-primary" type="submit" id="eGenero" value="submit"> Buscar</button>
         </form>
         
 	
 		<form action="/TP3_GR1/rest/estudiantes/listaEstudiantesCarrerasResidencia/" method="POST">
 			<h2>Estudiante por carrera y ciudad de residencia</h2>
             <div class="form-group">
-            <input class="form-control" type="text" name="carrera" id="" placeholder="Carrera">
+            <input class="form-control" type="text" name="carrera" id="carrera" placeholder="Carrera">
             </div>
             <div class="form-group">
-            <input class="form-control" type="text" name="ciudad_residencia" id="" placeholder="Ciudad de residencia"> 
+            <input class="form-control" type="text" name="ciudad_residencia" id="ciudad" placeholder="Ciudad de residencia"> 
         </div>
-            <button class="btn btn-primary" type="submit" value="submit"> Buscar</button>
+            <button class="btn btn-primary" type="submit" value="submit" id="eCarreraResidencia"> Buscar</button>
 		</form>
 	
 		<form action="/TP3_GR1/rest/estudiantes/obtenerEstudiante" method="GET">
 			<h2>Buscar estudiante segun el número de libreta universitaria</h2>
-        <div  class="form-group">            <input  class="form-control" type="number" name="id" min="0" step="1" placeholder="Legajo">
+        <div  class="form-group">            
+        	<input  class="form-control" type="number" id="legajo" name="id" min="0" step="1" placeholder="Legajo">
         </div>
-        <button class="btn btn-primary" type="submit" value="submit"> Buscar</button>
+        <button class="btn btn-primary" id="eLegajo" type="submit" value="submit"> Buscar</button>
         </form>
     </div>
 	</div>
